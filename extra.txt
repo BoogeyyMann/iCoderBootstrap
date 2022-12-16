@@ -1,0 +1,23 @@
+<script>
+let clientID='lo7TBmhnmlNLVvMQd3T7uwoG064mAvGw7YWZR3Wiew8'
+let endpoint=`https://api.unsplash.com/photos/?client_id=${clientID}`
+
+let imageElement1=document.getElementById('1')
+let imageElement2=document.getElementById('2')
+let imageElement3=document.getElementById('3')
+let imageElement4=document.getElementById('4')
+
+fetch(endpoint)
+    .then(function (response)
+    {
+        return response.json();
+    })
+    .then(function (jsonData)
+    {
+        imageElement1.src=jsonData.urls.regular;
+    })
+    .catch(function (error)
+    {
+        console.log("error: "+error);
+    })
+</script>
